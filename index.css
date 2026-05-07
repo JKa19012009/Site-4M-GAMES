@@ -1,0 +1,70 @@
+import { motion } from "motion/react";
+import { Gamepad2 } from "lucide-react";
+
+export function Hero() {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px'
+        }} />
+      </div>
+
+      <div className="container mx-auto px-4 z-10">
+        <div className="text-center">
+          <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-6"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 rounded-full border-2 border-white mb-6">
+              <Gamepad2 className="w-5 h-5 text-white" />
+              <span className="text-white">4M GAMES</span>
+            </div>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-6xl md:text-8xl mb-6 text-white drop-shadow-lg"
+            style={{
+              fontFamily: 'system-ui',
+              textShadow: '4px 4px 0px rgba(255,255,255,0.1)'
+            }}
+          >
+            PIXEL QUEST
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-3xl md:text-4xl mb-8 text-gray-300"
+          >
+            O Cristal Perdido
+          </motion.p>
+        </div>
+      </div>
+
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+      >
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
+          <motion.div
+            animate={{ y: [0, 12, 0], opacity: [1, 0, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-1 h-3 bg-white rounded-full mt-2"
+          />
+        </div>
+      </motion.div>
+    </section>
+  );
+}
