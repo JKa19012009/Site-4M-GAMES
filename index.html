@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Quest - O Cristal Perdido</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .badge-4m {
+            border: 1px solid #fff;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-title {
+            font-size: 5rem;
+            font-weight: 800;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        /* Cards e Seções */
+        .custom-card {
+            background: #121212;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            transition: transform 0.3s;
+        }
+
+        .custom-card:hover {
+            border-color: #555;
+        }
+
+        .icon-box {
+            background: #000;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Elementos (Círculos) */
+        .element-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+        }
+
+        /* Footer Custom */
+        footer {
+            border-top: 1px solid #222;
+            padding: 50px 0;
+            margin-top: 100px;
+        }
+
+        .footer-link {
+            color: #888;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-link:hover { color: #fff; }
+
+        /* Estilo Visual (Imagens) */
+        .img-placeholder {
+            background: #1a1a1a;
+            border-radius: 15px;
+            width: 100%;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero-section container">
+        <div class="badge-4m"><i class="bi bi-controller"></i> 4M GAMES</div>
+        <h1 class="hero-title">PIXEL QUEST</h1>
+        <p class="lead">O Cristal Perdido</p>
+        <div class="mt-5 pt-5">
+            <i class="bi bi-mouse fs-2"></i>
+        </div>
+    </header>
+
+    <section class="container my-5 py-5" id="sobre">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold">Sobre o Jogo</h2>
+            <p class="text-secondary mx-auto" style="max-width: 700px;">
+                Pixel Quest: O Cristal Perdido é uma aventura em plataforma 2D que combina jogabilidade clássica com uma história envolvente.
+            </p>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-3">
+                <div class="custom-card">
+                    <div class="icon-box"><i class="bi bi-sword"></i></div>
+                    <h4>Aventura Épica</h4>
+                    <p class="text-secondary small">Explore 4 regiões únicas e enfrente desafios crescentes.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="custom-card border-light">
+                    <div class="icon-box"><i class="bi bi-people"></i></div>
+                    <h4>Plataforma 2D</h4>
+                    <p class="text-secondary small">Jogabilidade clássica com mecânicas simples e precisas.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="custom-card">
+                    <div class="icon-box"><i class="bi bi-trophy"></i></div>
+                    <h4>Pixel Art</h4>
+                    <p class="text-secondary small">Arte nostálgica que celebra a era de ouro dos games.</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="custom-card">
+                    <div class="icon-box"><i class="bi bi-heart"></i></div>
+                    <h4>História Envolvente</h4>
+                    <p class="text-secondary small">Uma jornada épica para restaurar o equilíbrio do reino.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="custom-card p-5">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h3>Estilo Visual</h3>
+                    <p class="text-secondary">Inspirado em clássicos como Celeste e Shovel Knight...</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Gênero:</strong> Aventura / Plataforma</li>
+                        <li><strong>Câmera:</strong> Side-scrolling</li>
+                        <li><strong>Dificuldade:</strong> Crescente a cada fase</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-placeholder">
+                        <span class="text-muted small">[Imagem: Gameplay Pixel Art]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5 py-5 text-center">
+        <div class="badge-4m mb-3">A História</div>
+        <h2 class="display-4 fw-bold mb-5">Uma Jornada Épica</h2>
+        
+        <div class="row justify-content-center">
+            <div class="col-md-10 text-start">
+                <div class="custom-card mb-4">
+                    <h5><i class="bi bi-stars"></i> O Cristal da Luz</h5>
+                    <p class="text-secondary mt-3">Há muito tempo, o Cristal da Luz mantinha o equilíbrio do reino de Lumina...</p>
+                </div>
+                <div class="custom-card">
+                    <h5>Prólogo: A Chamada do Destino</h5>
+                    <p class="text-secondary mt-3">Elias é um explorador iniciante que vivia em uma pequena vila...</p>
+                    <div class="text-center mt-4">
+                        <div class="element-circle bg-success" title="Terra"><i class="bi bi-leaf"></i></div>
+                        <div class="element-circle bg-primary" title="Água"><i class="bi bi-droplet"></i></div>
+                        <div class="element-circle bg-danger" title="Fogo"><i class="bi bi-fire"></i></div>
+                        <div class="element-circle bg-info" title="Ar"><i class="bi bi-wind"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container my-5 py-5">
+        <h2 class="text-center display-5 fw-bold">Os Capítulos</h2>
+        <p class="text-center text-secondary mb-5">Quatro regiões únicas, quatro desafios épicos</p>
+        
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="custom-card">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="icon-box"><i class="bi bi-tree"></i></div>
+                        <span class="text-success">Capítulo 1 <i class="bi bi-leaf"></i></span>
+                    </div>
+                    <h4>Floresta Esquecida</h4>
+                    <p class="text-secondary small">Uma floresta mágica corrompida pela escuridão.</p>
+                    <div class="border-start border-3 ps-3 border-dark py-2">
+                        <small class="text-secondary">Boss Final:</small> <strong>Slime Gigante</strong>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+        <div class="custom-card text-center mt-5 py-4">
+            <p class="mb-0"><em>"Até mesmo a menor das luzes pode iluminar a escuridão mais profunda."</em></p>
+        </div>
+    </section>
+
+    <section class="container my-5 py-5 text-center">
+        <div class="badge-4m">Nossa Equipe</div>
+        <h2 class="display-5 fw-bold mb-5">Conheça a 4M Games</h2>
+        
+        <div class="row g-4">
+            <div class="col-md-3">
+                <div class="custom-card text-center">
+                    <div class="rounded-circle bg-white text-black mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; font-size: 2rem; font-weight: bold;">J</div>
+                    <h5>Juan Koga Azevedo</h5>
+                    <p class="text-secondary small">Game Designer</p>
+                    <div class="mt-3">
+                        <i class="bi bi-github mx-2"></i> <i class="bi bi-linkedin mx-2"></i> <i class="bi bi-envelope mx-2"></i>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <footer class="container-fluid bg-black">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold"><i class="bi bi-controller"></i> 4M GAMES</h5>
+                    <p class="text-secondary small">Criando experiências inesquecíveis através de jogos indie.</p>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6>Jogo</h6>
+                    <a href="#" class="footer-link small">História</a>
+                    <a href="#" class="footer-link small">Capítulos</a>
+                    <a href="#" class="footer-link small">Download</a>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h6>Empresa</h6>
+                    <a href="#" class="footer-link small">Equipe</a>
+                    <a href="#" class="footer-link small">Carreiras</a>
+                </div>
+                <div class="col-md-4 mb-4 text-md-end">
+                    <h6>Comunidade</h6>
+                    <div class="fs-4">
+                        <i class="bi bi-twitter mx-2"></i> <i class="bi bi-youtube mx-2"></i> <i class="bi bi-twitch mx-2"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pt-5 mt-5 border-top border-dark">
+                <p class="text-secondary x-small">&copy; 2026 4M Games. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
