@@ -13,19 +13,22 @@
             background-color: #000;
             color: #fff;
             font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Evita scroll horizontal indesejado */
         }
 
         /* Hero Section */
         .hero-section {
-            height: 100vh;
+            min-height: 100vh; /* min-height previne quebra em telas muito curtas */
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 2rem 1rem;
         }
 
         .badge-4m {
+            display: inline-block; /* Correção vital: Impede que estique 100% da tela */
             border: 1px solid #fff;
             border-radius: 20px;
             padding: 5px 15px;
@@ -34,7 +37,7 @@
         }
 
         .hero-title {
-            font-size: 5rem;
+            font-size: clamp(2.5rem, 8vw, 5rem); /* Tipografia responsiva */
             font-weight: 800;
             letter-spacing: 5px;
             text-transform: uppercase;
@@ -47,11 +50,14 @@
             border-radius: 15px;
             padding: 30px;
             height: 100%;
-            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s, border-color 0.3s;
         }
 
         .custom-card:hover {
             border-color: #555;
+            transform: translateY(-5px);
         }
 
         .icon-box {
@@ -63,6 +69,7 @@
             justify-content: center;
             border-radius: 10px;
             margin-bottom: 20px;
+            font-size: 1.2rem;
         }
 
         /* Elementos (Círculos) */
@@ -70,16 +77,17 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             justify-content: center;
-            margin: 10px;
+            font-size: 1.5rem;
+            color: #fff;
         }
 
         /* Footer Custom */
         footer {
             border-top: 1px solid #222;
-            padding: 50px 0;
+            padding: 50px 0 20px 0;
             margin-top: 100px;
         }
 
@@ -88,6 +96,7 @@
             text-decoration: none;
             display: block;
             margin-bottom: 10px;
+            transition: color 0.3s;
         }
 
         .footer-link:hover { color: #fff; }
@@ -101,6 +110,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            border: 1px dashed #333;
         }
     </style>
 </head>
@@ -124,48 +134,48 @@
         </div>
 
         <div class="row g-4 mb-5">
-            <div class="col-md-3">
+            <div class="col-12 col-sm-6 col-lg-3">
                 <div class="custom-card">
                     <div class="icon-box"><i class="bi bi-sword"></i></div>
                     <h4>Aventura Épica</h4>
-                    <p class="text-secondary small">Explore 4 regiões únicas e enfrente desafios crescentes.</p>
+                    <p class="text-secondary small mt-auto mb-0">Explore 4 regiões únicas e enfrente desafios crescentes.</p>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-12 col-sm-6 col-lg-3">
                 <div class="custom-card border-light">
                     <div class="icon-box"><i class="bi bi-people"></i></div>
                     <h4>Plataforma 2D</h4>
-                    <p class="text-secondary small">Jogabilidade clássica com mecânicas simples e precisas.</p>
+                    <p class="text-secondary small mt-auto mb-0">Jogabilidade clássica com mecânicas simples e precisas.</p>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-12 col-sm-6 col-lg-3">
                 <div class="custom-card">
                     <div class="icon-box"><i class="bi bi-trophy"></i></div>
                     <h4>Pixel Art</h4>
-                    <p class="text-secondary small">Arte nostálgica que celebra a era de ouro dos games.</p>
+                    <p class="text-secondary small mt-auto mb-0">Arte nostálgica que celebra a era de ouro dos games.</p>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-12 col-sm-6 col-lg-3">
                 <div class="custom-card">
                     <div class="icon-box"><i class="bi bi-heart"></i></div>
                     <h4>História Envolvente</h4>
-                    <p class="text-secondary small">Uma jornada épica para restaurar o equilíbrio do reino.</p>
+                    <p class="text-secondary small mt-auto mb-0">Uma jornada épica para restaurar o equilíbrio do reino.</p>
                 </div>
             </div>
         </div>
 
-        <div class="custom-card p-5">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
+        <div class="custom-card p-4 p-md-5">
+            <div class="row align-items-center g-4 flex-column-reverse flex-lg-row">
+                <div class="col-12 col-lg-6">
                     <h3>Estilo Visual</h3>
                     <p class="text-secondary">Inspirado em clássicos como Celeste e Shovel Knight...</p>
                     <ul class="list-unstyled">
-                        <li><strong>Gênero:</strong> Aventura / Plataforma</li>
-                        <li><strong>Câmera:</strong> Side-scrolling</li>
+                        <li class="mb-2"><strong>Gênero:</strong> Aventura / Plataforma</li>
+                        <li class="mb-2"><strong>Câmera:</strong> Side-scrolling</li>
                         <li><strong>Dificuldade:</strong> Crescente a cada fase</li>
                     </ul>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-12 col-lg-6">
                     <div class="img-placeholder">
                         <span class="text-muted small">[Imagem: Gameplay Pixel Art]</span>
                     </div>
@@ -179,15 +189,16 @@
         <h2 class="display-4 fw-bold mb-5">Uma Jornada Épica</h2>
         
         <div class="row justify-content-center">
-            <div class="col-md-10 text-start">
+            <div class="col-12 col-lg-10 text-start">
                 <div class="custom-card mb-4">
                     <h5><i class="bi bi-stars"></i> O Cristal da Luz</h5>
-                    <p class="text-secondary mt-3">Há muito tempo, o Cristal da Luz mantinha o equilíbrio do reino de Lumina...</p>
+                    <p class="text-secondary mt-3 mb-0">Há muito tempo, o Cristal da Luz mantinha o equilíbrio do reino de Lumina...</p>
                 </div>
                 <div class="custom-card">
                     <h5>Prólogo: A Chamada do Destino</h5>
                     <p class="text-secondary mt-3">Elias é um explorador iniciante que vivia em uma pequena vila...</p>
-                    <div class="text-center mt-4">
+                    
+                    <div class="d-flex justify-content-center flex-wrap gap-3 mt-4">
                         <div class="element-circle bg-success" title="Terra"><i class="bi bi-leaf"></i></div>
                         <div class="element-circle bg-primary" title="Água"><i class="bi bi-droplet"></i></div>
                         <div class="element-circle bg-danger" title="Fogo"><i class="bi bi-fire"></i></div>
@@ -202,24 +213,24 @@
         <h2 class="text-center display-5 fw-bold">Os Capítulos</h2>
         <p class="text-center text-secondary mb-5">Quatro regiões únicas, quatro desafios épicos</p>
         
-        <div class="row g-4">
-            <div class="col-md-6">
+        <div class="row g-4 justify-content-center">
+            <div class="col-12 col-md-6">
                 <div class="custom-card">
                     <div class="d-flex justify-content-between align-items-center mb-3">
-                        <div class="icon-box"><i class="bi bi-tree"></i></div>
-                        <span class="text-success">Capítulo 1 <i class="bi bi-leaf"></i></span>
+                        <div class="icon-box mb-0"><i class="bi bi-tree"></i></div>
+                        <span class="text-success fw-bold">Capítulo 1 <i class="bi bi-leaf ms-1"></i></span>
                     </div>
                     <h4>Floresta Esquecida</h4>
-                    <p class="text-secondary small">Uma floresta mágica corrompida pela escuridão.</p>
-                    <div class="border-start border-3 ps-3 border-dark py-2">
-                        <small class="text-secondary">Boss Final:</small> <strong>Slime Gigante</strong>
+                    <p class="text-secondary small mb-4">Uma floresta mágica corrompida pela escuridão.</p>
+                    <div class="border-start border-3 ps-3 border-secondary py-2 mt-auto">
+                        <small class="text-secondary">Boss Final:</small> <strong class="d-block d-sm-inline">Slime Gigante</strong>
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
 
         <div class="custom-card text-center mt-5 py-4">
-            <p class="mb-0"><em>"Até mesmo a menor das luzes pode iluminar a escuridão mais profunda."</em></p>
+            <p class="mb-0 text-light"><em>"Até mesmo a menor das luzes pode iluminar a escuridão mais profunda."</em></p>
         </div>
     </section>
 
@@ -227,47 +238,51 @@
         <div class="badge-4m">Nossa Equipe</div>
         <h2 class="display-5 fw-bold mb-5">Conheça a 4M Games</h2>
         
-        <div class="row g-4">
-            <div class="col-md-3">
+        <div class="row g-4 justify-content-center">
+            <div class="col-12 col-sm-6 col-lg-3">
                 <div class="custom-card text-center">
                     <div class="rounded-circle bg-white text-black mx-auto mb-3 d-flex align-items-center justify-content-center" style="width: 80px; height: 80px; font-size: 2rem; font-weight: bold;">J</div>
                     <h5>Juan Koga Azevedo</h5>
-                    <p class="text-secondary small">Game Designer</p>
-                    <div class="mt-3">
-                        <i class="bi bi-github mx-2"></i> <i class="bi bi-linkedin mx-2"></i> <i class="bi bi-envelope mx-2"></i>
+                    <p class="text-secondary small mb-0">Game Designer</p>
+                    <div class="mt-3 fs-5">
+                        <i class="bi bi-github mx-1" style="cursor: pointer;"></i> 
+                        <i class="bi bi-linkedin mx-1" style="cursor: pointer;"></i> 
+                        <i class="bi bi-envelope mx-1" style="cursor: pointer;"></i>
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
     </section>
 
     <footer class="container-fluid bg-black">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5 class="fw-bold"><i class="bi bi-controller"></i> 4M GAMES</h5>
-                    <p class="text-secondary small">Criando experiências inesquecíveis através de jogos indie.</p>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <h5 class="fw-bold mb-3"><i class="bi bi-controller"></i> 4M GAMES</h5>
+                    <p class="text-secondary small pe-md-4">Criando experiências inesquecíveis através de jogos indie.</p>
                 </div>
-                <div class="col-md-2 mb-4">
-                    <h6>Jogo</h6>
+                <div class="col-6 col-md-2">
+                    <h6 class="mb-3">Jogo</h6>
                     <a href="#" class="footer-link small">História</a>
                     <a href="#" class="footer-link small">Capítulos</a>
                     <a href="#" class="footer-link small">Download</a>
                 </div>
-                <div class="col-md-2 mb-4">
-                    <h6>Empresa</h6>
+                <div class="col-6 col-md-2">
+                    <h6 class="mb-3">Empresa</h6>
                     <a href="#" class="footer-link small">Equipe</a>
                     <a href="#" class="footer-link small">Carreiras</a>
                 </div>
-                <div class="col-md-4 mb-4 text-md-end">
-                    <h6>Comunidade</h6>
+                <div class="col-12 col-md-4 text-md-end mt-4 mt-md-0">
+                    <h6 class="mb-3">Comunidade</h6>
                     <div class="fs-4">
-                        <i class="bi bi-twitter mx-2"></i> <i class="bi bi-youtube mx-2"></i> <i class="bi bi-twitch mx-2"></i>
+                        <i class="bi bi-twitter mx-1 text-secondary" style="cursor: pointer;"></i> 
+                        <i class="bi bi-youtube mx-1 text-secondary" style="cursor: pointer;"></i> 
+                        <i class="bi bi-twitch mx-1 text-secondary" style="cursor: pointer;"></i>
                     </div>
                 </div>
             </div>
-            <div class="text-center pt-5 mt-5 border-top border-dark">
-                <p class="text-secondary x-small">&copy; 2026 4M Games. Todos os direitos reservados.</p>
+            <div class="text-center pt-4 mt-5 border-top border-dark">
+                <p class="text-secondary small mb-0">&copy; 2026 4M Games. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
