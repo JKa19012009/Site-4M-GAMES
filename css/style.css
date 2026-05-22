@@ -1,0 +1,160 @@
+/* ==========================================================================
+   Configurações Globais
+   ========================================================================== */
+:root {
+    --bg-color-top: #6a22c5;
+    --bg-color-bottom: #3a0d78;
+    --text-primary: #ffffff;
+    --text-secondary: #d1bdf2;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-primary);
+    /* Fundo com gradiente roxo inspirado nas imagens */
+    background: linear-gradient(135deg, var(--bg-color-top) 0%, var(--bg-color-bottom) 100%);
+    background-attachment: fixed;
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   Tipografia e Elementos Comuns
+   ========================================================================== */
+h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border-radius: 50px;
+    border: 1px solid var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+/* ==========================================================================
+   Cabeçalho (Hero Section)
+   ========================================================================== */
+header {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+header h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+/* ==========================================================================
+   Cards e Grids
+   ========================================================================== */
+.features-grid, .capitulos-grid, .equipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.card, .card-historia, .card-prologo, .card-capitulo, .membro {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(10px); /* Efeito de vidro (Glassmorphism) */
+    transition: transform 0.3s ease;
+}
+
+.card:hover, .card-capitulo:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ==========================================================================
+   Sessões Específicas
+   ========================================================================== */
+/* História */
+#historia {
+    text-align: center;
+}
+
+.card-historia, .card-prologo {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.elementos {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+/* Capítulos - Cores dos elementos */
+.card-capitulo.terra { border-top: 4px solid #4CAF50; }
+.card-capitulo.agua { border-top: 4px solid #2196F3; }
+.card-capitulo.fogo { border-top: 4px solid #F44336; }
+.card-capitulo.ar { border-top: 4px solid #E0E0E0; }
+
+.boss {
+    margin-top: 1.5rem;
+    padding: 0.8rem;
+    background: rgba(0,0,0,0.2);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* Equipe */
+.membro {
+    text-align: center;
+}
+
+.membro h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
